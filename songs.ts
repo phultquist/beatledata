@@ -17,6 +17,11 @@ const generateAlbums = async () => {
     for (var i: number = 0; i < rows.length; i++) {
         try {
             await parseRow(rows[i]);
+            const delayTime = 3000; // ms
+            let currentTime = Date.now();
+            while (Date.now() - currentTime < delayTime) {
+                // do nothing
+            }
         } catch (e) {
             console.log("Error for row " + i);
             console.log(e);
